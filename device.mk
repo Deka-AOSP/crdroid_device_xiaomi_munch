@@ -25,6 +25,10 @@ TARGET_SCREEN_WIDTH := 1080
 # Camera
 PRODUCT_PACKAGES += \
     libpiex_shim
+
+# MIUI Camera
+    $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/miuicamera.mk)
+    PRODUCT_PRODUCT_PROPERTIES += ro.product.mod_device=codename_global
     
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
